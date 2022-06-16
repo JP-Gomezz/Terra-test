@@ -9,14 +9,14 @@ resource "digitalocean_droplet" "JP-Test1" {
       data.digitalocean_ssh_key.JP.id
   ]
 
- # #Connection setup
- # connection {
- #   host = self.ipv4_address
- #   user = "root"
- #   type = "ssh"
- #   private_key = file("~/.ssh/id_rsa")
- #   timeout = "2m"
- # }
+ #Connection setup
+  connection {
+    host = self.ipv4_address
+    user = "root"
+    type = "ssh"
+    private_key = file("~/.ssh/id_rsa")
+    timeout = "2m"
+  }
   
  # #Mysql setup file transfer provisioner
  # provisioner "file" {
