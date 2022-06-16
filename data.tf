@@ -1,6 +1,5 @@
-data "digitalocean_ssh_key" "main" {
-#    name = var.ssh_key
-     name = var.do_token
+data "digitalocean_ssh_key" "JP" {
+  name = "JP"
 }
 
 data "digitalocean_domain" "web" {
