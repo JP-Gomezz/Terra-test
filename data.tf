@@ -4,7 +4,7 @@ data "digitalocean_ssh_key" "JP" {
 
 resource "digitalocean_domain" "default" {
    name = var.domain_name
-}
+
 
 #connection setup
 
@@ -16,4 +16,4 @@ connection {
       timeout  = "60m"
       agent = "false"
     }
-
+}
