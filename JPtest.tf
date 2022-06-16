@@ -14,7 +14,7 @@ resource "digitalocean_droplet" "JP-Test1" {
     host = self.ipv4_address
     user = "root"
     type = "ssh"
-    private_key = file(var.pvt_key)
+    private_key = file("~/.ssh/id_rsa")
     timeout = "2m"
   }
   
