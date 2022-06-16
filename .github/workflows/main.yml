@@ -2,7 +2,7 @@
 name: 'Terraform GitHub Actions'
 on:
     push:
-     branches: [ type-development-here ]
+     branches: [ development ]
 jobs:
   terraform:
     name: 'Terraform'
