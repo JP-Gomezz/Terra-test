@@ -21,12 +21,10 @@ resource "digitalocean_droplet" "JP-Test1" {
    }
   
  # #Mysql setup file transfer provisioner
-  provisioner "file" {
+ # provisioner "file" {
  #   source="/Users/bcmx/github/loadbalance/mysql-setup.sh"
-     source="./data.tf" 
  #   destination="/tmp/mysql-setup.sh"
-     destination="/tmp/data.tf"
-  }
+ # }
 
 #  provisioner "remote-exec" {
 #     inline = [
