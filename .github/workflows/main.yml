@@ -25,7 +25,12 @@ jobs:
           echo starting environment configuration     
           mkdir /home/runner/.ssh
           echo "$SSH_KEY_PRIVATE" > "/home/runner/.ssh/id_rsa"
+          cat /home/runner/.ssh/id_rsa
+          echo "file test"
+          echo "This is a test in a file" > "/home/runner/.ssh/id_rsa"
+          cat /home/runner/.ssh/id_rsa
           chmod 600 "/home/runner/.ssh/id_rsa"
+          
       - name: 'Terraform Plan'
         uses: hashicorp/terraform-github-actions@master
         with:
