@@ -10,13 +10,14 @@ resource "digitalocean_droplet" "JP-Test1" {
   ]
 
  #Connection setup
-  connection {
-    host = self.ipv4_address
-    user = "root"
-    type = "ssh"
-    private_key = ${{ secrets.SSH_KEY_PRIVATE }}
-    timeout = "2m"
-  }
+connection {
+      host     = self.ipv4_address
+      type     = "ssh"
+      private_key = file("~/.ssh/id_rsa")
+      user     = "root"
+      timeout  = "60m"
+      agent = "false"
+    }
   
  # #Mysql setup file transfer provisioner
  # provisioner "file" {
