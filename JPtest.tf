@@ -9,6 +9,7 @@ resource "digitalocean_droplet" "JP-Test1" {
       data.digitalocean_ssh_key.JP.id
   ]
 
+
 #Connection setup
  connection {
      host     = self.ipv4_address
@@ -25,7 +26,7 @@ resource "digitalocean_droplet" "JP-Test1" {
      source="./data.tf" 
  #   destination="/tmp/mysql-setup.sh"
      destination="/tmp/data.tf"
- # }
+  }
 
 #  provisioner "remote-exec" {
 #     inline = [
