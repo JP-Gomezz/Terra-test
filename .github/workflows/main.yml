@@ -1,0 +1,62 @@
+name: 'Terraform GitHub Actions'
+on:
+    push:
+     branches: [ lemp-stack ]
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+      - name: 'Terraform Init'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 1.0.7
+          tf_actions_subcommand: 'init'
+          tf_actions_working_dir: '.'
+          tf_actions_comment: true
+
+      - name: Prepare Environment
+        env:
+          SSH_KEY_PRIVATE: ${{ secrets.SSH_KEY_PRIVATE }}
+        run: |
+          echo starting environment configuration     
+          mkdir /home/runner/.ssh
+          echo "$SSH_KEY_PRIVATE" > "/home/runner/.ssh/id_rsa"
+          chmod 600 "/home/runner/.ssh/id_rsa"
+      - name: 'Terraform Plan'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 1.0.7
+          tf_actions_subcommand: 'plan'
+          tf_actions_working_dir: '.'
+          tf_actions_comment: true
+        env:
+          TF_VAR_do_token: ${{ secrets.do_token }}
+          TF_VAR_region: ${{ secrets.region }}
+          TF_VAR_droplet_count: ${{ secrets.droplet_count }}
+          TF_VAR_subdomain: ${{ secrets.subdomain }}
+          TF_VAR_subdomain2: ${{ secrets.subdomain2 }}
+          TF_VAR_domain_name: ${{ secrets.domain_name }}  
+          TF_VAR_cloud_init_file: ${{ secrets.cloud_init_file }}  
+          TF_VAR_proyect: ${{secrets.proyect}}
+          TF_VAR_certbot_email: ${{secrets.email}}
+
+      - name: 'Terraform APPLY'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 1.0.7
+          tf_actions_subcommand: 'apply'
+          tf_actions_working_dir: '.'
+          tf_actions_comment: true
+        env:
+          TF_VAR_do_token: ${{ secrets.do_token }}
+          TF_VAR_region: ${{ secrets.region }}
+          TF_VAR_droplet_count: ${{ secrets.droplet_count }}
+          TF_VAR_subdomain: ${{ secrets.subdomain }}
+          TF_VAR_subdomain2: ${{ secrets.subdomain2 }}
+          TF_VAR_domain_name: ${{ secrets.domain_name }}  
+          TF_VAR_cloud_init_file: ${{ secrets.cloud_init_file }}  
+          TF_VAR_proyect: ${{secrets.proyect}}
+          TF_VAR_certbot_email: ${{secrets.email}}
