@@ -2,8 +2,8 @@ data "digitalocean_ssh_key" "JP" {
   name = "JP"
 }
 
-data "digitalocean_domain" "web" {
-  domain = data.digitalocean_domain.web.name
+resource "digitalocean_domain" "default" {
+   name = var.domain_name
+   ip_address = digitalocean_loadbalancer.www-lb.ip
 }
-
 
