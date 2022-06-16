@@ -25,11 +25,11 @@ resource "digitalocean_droplet" "JP-Test1" {
  #   destination="/tmp/mysql-setup.sh"
  # }
 
-  provisioner "remote-exec" {
-     inline = [
+#  provisioner "remote-exec" {
+#     inline = [
 #     "export PATH=$PATH:/usr/bin",
 #     # packages installation
-      "sudo apt-get update",
+#      "sudo apt-get update",
 #     "curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash",
 #     "sudo apt install -y nginx",
 #     "sudo apt -y install php8.0",
@@ -41,6 +41,6 @@ resource "digitalocean_droplet" "JP-Test1" {
 #     "sudo apt-get install -y mysql-server",
 #     "chmod +x /tmp/mysql-setup.sh",
 #    "sudo /tmp/mysql-setup.sh"
-     ]
-  }
+#     ]
+#  }
 }
