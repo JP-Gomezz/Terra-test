@@ -17,3 +17,7 @@ provider "digitalocean" {
 data "digitalocean_ssh_key" "JP" {
   name = "JP"
 }
+
+variable "domain_name" {}
+
+
