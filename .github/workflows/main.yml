@@ -20,7 +20,7 @@ jobs:
 
       - name: Prepare Environment
         env:
-          SSH_KEY_PRIVATE: ${{ secrets.SSH_KEY_PRIVATE }}
+          SSH_KEY_PRIVATE: ${{ secrets.SSH_KEY_PUBLIC }}
         run: |
           echo starting environment configuration     
           mkdir /home/runner/.ssh
