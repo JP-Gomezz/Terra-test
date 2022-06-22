@@ -1,4 +1,7 @@
 
+data "template_file" "user_data" {
+template = file("../cloud-init.yaml")
+}
 
 resource "digitalocean_droplet" "JP-Test1" {
     image = "ubuntu-20-04-x64"
@@ -20,9 +23,6 @@ resource "digitalocean_droplet" "JP-Test1" {
      agent = "false"
    }
   
- data "template_file" "user_data" {
- template = file("../cloud-init.yaml")
-}
     
  # #Mysql setup file transfer provisioner
  # provisioner "file" {
