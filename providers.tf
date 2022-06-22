@@ -5,10 +5,15 @@ terraform {
       version = "~> 2.0"
     }
   }
-  
-  provider "digitalocean" {
+}
+
+variable "do_token" {}
+variable "pvt_key" {}
+
+provider "digitalocean" {
   token = var.do_token
 }
 
+data "digitalocean_ssh_key" "JP" {
+  name = "JP"
 }
-
