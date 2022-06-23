@@ -22,7 +22,7 @@ variable "size" {
 
 }
 
-var "pkey" {
+variable "pkey" {
   type = string
   default = "~/.ssh/id_rsa"
 
