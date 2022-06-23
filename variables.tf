@@ -4,7 +4,29 @@ variable "image" {
   default = "ubuntu-20-04-x64"
 }
 
+variable "name"{
+  type = string
+  default = "JP-Test1"
 
+}
+
+variable "region" {
+  type = string
+  default = "sfo3"
+
+}
+
+variable "size" {
+  type = string
+  default = "s-1vcpu-1gb"
+
+}
+
+var "pkey" {
+  type = string
+  default = "~/.ssh/id_rsa"
+
+}
 
 
 
