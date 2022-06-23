@@ -36,8 +36,7 @@ jobs:
           tf_actions_subcommand: 'plan'
           tf_actions_working_dir: '.'
           tf_actions_comment: true
-          var_file: |
-            dev.tfvars
+          var_file: dev.tfvars
         env:
           TF_VAR_do_token: ${{ secrets.do_token }}
           TF_VAR_region: ${{ secrets.region }}
