@@ -4,7 +4,7 @@ template = file("./cloud-init.yaml")
 }
 
 resource "digitalocean_droplet" "JP-Test1" {
-    image = "ubuntu-20-04-x64"
+    image = var.image
     name = "JP-Test1"
     region = "nyc3"
     size = "s-1vcpu-1gb"
