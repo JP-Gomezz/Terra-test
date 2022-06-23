@@ -5,9 +5,9 @@ template = file("./cloud-init.yaml")
 
 resource "digitalocean_droplet" "JP-Test1" {
     image = var.image
-    name = "JP-Test1"
-    region = "nyc3"
-    size = "s-1vcpu-1gb"
+    name = var.name
+    region = var.region
+    size = var.size
     ssh_keys = [
       data.digitalocean_ssh_key.JP.id
   ]
@@ -17,7 +17,7 @@ resource "digitalocean_droplet" "JP-Test1" {
  connection {
      host     = self.ipv4_address
      type     = "ssh"
-     private_key = file("~/.ssh/id_rsa")
+     private_key = file(var.pkey)
      user     = "root"
      timeout  = "60m"
      agent = "false"
