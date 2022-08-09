@@ -13,6 +13,6 @@ provider "digitalocean" {
   token = var.do_token
 }
 
-data "digitalocean_ssh_key" "jp" {
+data "digitalocean_ssh_key" "JP" {
   name = "JP"
 }
