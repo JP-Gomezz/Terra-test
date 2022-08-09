@@ -38,7 +38,7 @@ jobs:
           tf_actions_comment: true
           args: '-var-file="dev.tfvars"'
         env:
-          TF_VAR_do_token: ${{ secrets.do_token }}
+          TF_VAR_do_token: ${{ secrets.do_token2 }}
           TF_VAR_region: ${{ secrets.region }}
           TF_VAR_droplet_count: ${{ secrets.droplet_count }}
           TF_VAR_domain_name: ${{ secrets.domain_name }}
