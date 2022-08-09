@@ -14,5 +14,5 @@ provider "digitalocean" {
 }
 
 data "digitalocean_ssh_key" "jp" {
-  name = "jp"
+  name = "JP"
 }
