@@ -44,18 +44,18 @@ jobs:
           TF_VAR_domain_name: ${{ secrets.domain_name }}
           TF_VAR_cloud_init_file: "./cloud-init.yaml"
 
-#      - name: 'Terraform APPLY'
-#        uses: hashicorp/terraform-github-actions@master
-#        with:
-#          tf_actions_version: 1.0.7
-#          tf_actions_subcommand: 'apply'
-#          tf_actions_working_dir: '.'
-#          tf_actions_comment: true
-#        env:
-#          TF_VAR_do_token: ${{ secrets.do_token2 }}
-#          TF_VAR_region: ${{ secrets.region }}
-#          TF_VAR_droplet_count: ${{ secrets.droplet_count }}
-#          TF_VAR_domain_name: ${{ secrets.domain_name }}
-#          TF_VAR_cloud_init_file: "./cloud-init.yaml"
+      - name: 'Terraform APPLY'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 1.0.7
+          tf_actions_subcommand: 'apply'
+          tf_actions_working_dir: '.'
+          tf_actions_comment: true
+        env:
+          TF_VAR_do_token: ${{ secrets.do_token2 }}
+          TF_VAR_region: ${{ secrets.region }}
+          TF_VAR_droplet_count: ${{ secrets.droplet_count }}
+          TF_VAR_domain_name: ${{ secrets.domain_name }}
+          TF_VAR_cloud_init_file: "./cloud-init.yaml"
           
 
