@@ -34,3 +34,4 @@ runcmd:
   - apt-get update -y
   - snap install core; sudo snap refresh core
   - snap install --classic certbot
+  - sudo apt-get -y install bacula-client
