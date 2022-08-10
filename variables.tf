@@ -32,7 +32,6 @@ variable cloud_init_file {
     type = string
 }
 
-variable do_token {}
 
 
 
