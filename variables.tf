@@ -32,6 +32,10 @@ variable cloud_init_file {
     type = string
 }
 
+variable domain_name {
+    type = string
+}
+
 
 
 
