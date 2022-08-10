@@ -12,6 +12,7 @@ resource "digitalocean_droplet" "JP-Test1" {
       data.digitalocean_ssh_key.JP.id
   ]
 
+user_data  = data.template_file.user_data.rendered
 
 #Connection setup
  connection {
@@ -23,6 +24,8 @@ resource "digitalocean_droplet" "JP-Test1" {
      agent = "false"
    }
   
+    
+ 
     
  # #Mysql setup file transfer provisioner
  # provisioner "file" {
