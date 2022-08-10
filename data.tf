@@ -1,6 +1,3 @@
-data "digitalocean_domain" "web" {
-    name = var.domain_name
-}
 
 data "template_file" "user_data" {
   
